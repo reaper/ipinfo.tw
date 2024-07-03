@@ -108,6 +108,7 @@ server {
     proxy_set_header X-Forwarded-Port {{ $.PROXY_X_FORWARDED_PORT }};
     proxy_set_header X-Forwarded-Proto {{ $.PROXY_X_FORWARDED_PROTO }};
     proxy_set_header X-Request-Start $msec;
+    proxy_set_header X-Real-IP $remote_addr;
     {{ if $.PROXY_X_FORWARDED_SSL }}proxy_set_header X-Forwarded-Ssl {{ $.PROXY_X_FORWARDED_SSL }};{{ end }}
   }
 
